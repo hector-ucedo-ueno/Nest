@@ -20,4 +20,10 @@ export const charmander: Pokemon = {
   age: 1
 };
 
-console.log(bulbasaur);
+//export const pokemons = [];
+export const pokemons: Pokemon[] = [];
+
+// pokemons.push(1, 'string', charmander); //? Argument of type '1' is not assignable to parameter of type 'never'.
+pokemons.push( charmander, bulbasaur );
+
+console.log(pokemons)
