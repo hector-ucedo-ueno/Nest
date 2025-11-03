@@ -1,3 +1,6 @@
+//* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring
+
+import axios from 'axios';
 
 //? Versión larga de la clase
 export class Pokemon {
@@ -20,9 +23,22 @@ export class Pokemon {
     speak() {
         console.log(`${this.name} ${this.name} está hablando!`);
     }
+
+    async getMoves() {
+        // const moves = 10;
+        //const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon/4`);
+        const {data} = await axios.get(`https://pokeapi.co/api/v2/pokemon/4`); //? Desestructuracion
+
+        console.log( data.moves );
+        return data.moves;
+    }
+
 }
 
 export const charmander = new Pokemon(1, 'Charmander')
 
-charmander.scream();
-charmander.speak(); //?Property 'speak' is private and only accessible within class 'Pokemon'.
+//charmander.scream();
+//charmander.speak(); //?Property 'speak' is private and only accessible within class 'Pokemon'.
+
+//console.log( charmander.getMoves() );
+charmander.getMoves();
