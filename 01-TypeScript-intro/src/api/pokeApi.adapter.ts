@@ -1,11 +1,11 @@
 import axios from "axios";
 
 
-export class PokeapiAdapter {
+export class PokeApiAdapter {
 
     private readonly axios = axios;
 
-    get( url: string ) {
+    async get( url: string ) {
         const { data } = await this.axios.get(url);
         return data;
     }
@@ -16,7 +16,7 @@ export class PokeapiAdapter {
     async pach( url: string, data: any ) {
     
     }
-    async delete( url: string, data: any ) {
+    async delete( url: string ) {
     
     }
 
